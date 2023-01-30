@@ -17,7 +17,7 @@
 
     <title>通过树莓派的 QEMU 运行 OpenWrt | Cathi 的 Blog ！</title>
 
-    <link rel="stylesheet" href="/css/meme.min.fe12fe588c3f41c39a4cf3b988120544af5a209bad84c399f4edb6eaaaf4f565.css"/>
+    <link rel="stylesheet" href="/css/meme.min.7e5b3ab76918633558bc34c27f6f27c8053ebb72fcc1c6eec4aaeec8403f4b68.css"/>
 
     
     
@@ -57,13 +57,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2023-01-30T01:51:24+00:00",
-        "dateModified": "2023-01-30T16:30:51+00:00",
+        "dateModified": "2023-01-30T16:49:18+00:00",
         "url": "https://cathi555.github.io/articles/raspberrypi_qemu_openwrt/",
         "headline": "通过树莓派的 QEMU 运行 OpenWrt",
         "description": "给吃灰了几个月的树莓派找点活干",
         "inLanguage" : "zh-CN",
         "articleSection": "articles",
-        "wordCount":  1993 ,
+        "wordCount":  1998 ,
         "image": "https://cathi555.github.io/icons/apple-touch-icon.png",
         "author": {
             "@type": "Person",
@@ -103,7 +103,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://cathi555.github.io/icons/apple-touch-icon.png" />
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2023-01-30T01:51:24&#43;00:00" />
-    <meta property="article:modified_time" content="2023-01-30T16:30:51&#43;00:00" />
+    <meta property="article:modified_time" content="2023-01-30T16:49:18&#43;00:00" />
     
     <meta property="article:section" content="articles" />
 
@@ -216,7 +216,7 @@
     
     
         
-        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;1993</span>
+        <span class="post-meta-item wordcount"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;1998</span>
     
     
     
@@ -600,7 +600,7 @@ config interface &#39;lan&#39;
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sed -i <span class="s1">&#39;s_downloads.openwrt.org_mirrors.bfsu.edu.cn/openwrt_&#39;</span> /etc/opkg/distfeeds.conf <span class="c1"># 换源</span>
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;nameserver 114.114.114.114&#34;</span> &gt;&gt;/etc/resolv.conf <span class="c1"># 设置个临时 DNS</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;nameserver 114.114.114.114&#34;</span> &gt;&gt;/etc/resolv.conf <span class="c1"># 设置临时 DNS （重启失效）</span>
 </span></span><span class="line"><span class="cl">opkg update <span class="c1"># 更新软件包列表</span>
 </span></span></code></pre></td></tr></table></div>
 </div>
@@ -670,22 +670,6 @@ config interface &#39;lan&#39;
             </div>
 
             
-    
-    
-        <ul class="post-copyright">
-            <li class="copyright-item author"><span class="copyright-item-text">作者</span>：<a href="https://cathi555.github.io/" class="p-author h-card" target="_blank" rel="noopener">Cathi</a></li>
-            
-                
-                
-                
-                
-                <li class="copyright-item link"><span class="copyright-item-text">链接</span>：<a href="/articles/raspberrypi_qemu_openwrt/" target="_blank" rel="noopener">https://cathi555.github.io/articles/raspberrypi_qemu_openwrt/</a></li>
-            
-            <li class="copyright-item license"><span class="copyright-item-text">许可</span>：<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></li>
-            
-        </ul>
-    
-
 
 
         </article>
@@ -694,7 +678,7 @@ config interface &#39;lan&#39;
 
         
     <div class="updated-badge-container">
-        <span title="Updated @ 2023-01-30 16:30:51 UTC" style="cursor:help">
+        <span title="Updated @ 2023-01-30 16:49:18 UTC" style="cursor:help">
 
 <svg xmlns="http://www.w3.org/2000/svg" width="130" height="20" class="updated-badge"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="130" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path class="updated-badge-left" d="M0 0h55v20H0z"/><path class="updated-badge-right" d="M55 0h75v20H55z"/><path fill="url(#b)" d="M0 0h130v20H0z"/></g><g fill="#fff" text-anchor="middle" font-size="110"><text x="285" y="150" fill="#010101" fill-opacity=".3" textLength="450" transform="scale(.1)">updated</text><text x="285" y="140" textLength="450" transform="scale(.1)">updated</text><text x="915" y="150" fill="#010101" fill-opacity=".3" textLength="650" transform="scale(.1)">2023-01-30</text><text x="915" y="140" textLength="650" transform="scale(.1)">2023-01-30</text></g></svg>
         </span></div>
@@ -752,7 +736,7 @@ config interface &#39;lan&#39;
             
     <footer id="footer" class="footer">
         <div class="footer-inner">
-            <div class="site-info">2022–2023&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;Cathi</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div>
+            <div class="site-info">2022–2023&nbsp;<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon footer-icon"><path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/></svg>&nbsp;Cathi</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div><div class="site-copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a></div>
 
             
 
